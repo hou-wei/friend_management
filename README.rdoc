@@ -5,9 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-	
-  ruby 2.1.5（ Version 2.1.5 or above）, rails 4.2.5.1 （ Version 4.2.5.1 or above）
+* Ruby version 
+  
+  ruby 2.1.5  rails 4.2.5.1
 
 * System dependencies
 
@@ -15,13 +15,15 @@ Things you may want to cover:
 
 * Configuration
 
-  ruby on rails 
+  ruby on rails
 
 * Database creation
 
   rake db:migrate RAILS_ENV=development
 
 * Database initialization
+
+  db/development.sqlite3
 
 * How to run the test suite
 
@@ -36,3 +38,6 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+
