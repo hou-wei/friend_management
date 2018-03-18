@@ -1,0 +1,17 @@
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true,"friends":["john@example.com","common@example.com"],"count":2}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true,"friends":["common@example.com"],"count":1}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ ruby json_test.rb
+{"success":true,"recipients":["common@example.com","lisa@example.com"]}
+fun-mac01-no-MacBook-Pro:friend_management fun-mac01$ 

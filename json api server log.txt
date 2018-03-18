@@ -1,0 +1,117 @@
+Started POST "/friend_user/create_friend" for 127.0.0.1 at 2018-03-18 15:47:22 +0900
+  ActiveRecord::SchemaMigration Load (0.1ms)  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by FriendUserController#create_friend as */*
+  Parameters: {"friends"=>["andy@example.com", "john@example.com"], "friend_user"=>{}}
+  BlockUser Exists (0.2ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "andy@example.com"], ["block_email", "john@example.com"]]
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "john@example.com"], ["block_email", "andy@example.com"]]
+  FriendUser Exists (0.2ms)  SELECT  1 AS one FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ? LIMIT 1  [["email", "andy@example.com"], ["friend_email", "john@example.com"]]
+  FriendUser Exists (0.1ms)  SELECT  1 AS one FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ? LIMIT 1  [["email", "john@example.com"], ["friend_email", "andy@example.com"]]
+   (0.1ms)  begin transaction
+  SQL (0.3ms)  INSERT INTO "friend_users" ("email", "friend_email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "andy@example.com"], ["friend_email", "john@example.com"], ["created_at", "2018-03-18 06:47:22.567292"], ["updated_at", "2018-03-18 06:47:22.567292"]]
+   (1.2ms)  commit transaction
+   (0.1ms)  begin transaction
+   (0.0ms)  commit transaction
+[FriendUserController]create_friend == create a friend connection between two email addresses ,params ==["andy@example.com", "john@example.com"]
+Completed 200 OK in 69ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/friend_user/create_friend" for 127.0.0.1 at 2018-03-18 15:47:36 +0900
+Processing by FriendUserController#create_friend as */*
+  Parameters: {"friends"=>["andy@example.com", "common@example.com"], "friend_user"=>{}}
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "andy@example.com"], ["block_email", "common@example.com"]]
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "common@example.com"], ["block_email", "andy@example.com"]]
+  FriendUser Exists (0.1ms)  SELECT  1 AS one FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ? LIMIT 1  [["email", "andy@example.com"], ["friend_email", "common@example.com"]]
+  FriendUser Exists (0.1ms)  SELECT  1 AS one FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ? LIMIT 1  [["email", "common@example.com"], ["friend_email", "andy@example.com"]]
+   (0.0ms)  begin transaction
+  SQL (0.2ms)  INSERT INTO "friend_users" ("email", "friend_email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "andy@example.com"], ["friend_email", "common@example.com"], ["created_at", "2018-03-18 06:47:36.180323"], ["updated_at", "2018-03-18 06:47:36.180323"]]
+   (1.3ms)  commit transaction
+   (0.1ms)  begin transaction
+   (0.0ms)  commit transaction
+[FriendUserController]create_friend == create a friend connection between two email addresses ,params ==["andy@example.com", "common@example.com"]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/friend_user/create_friend" for 127.0.0.1 at 2018-03-18 15:47:44 +0900
+Processing by FriendUserController#create_friend as */*
+  Parameters: {"friends"=>["john@example.com", "common@example.com"], "friend_user"=>{}}
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "john@example.com"], ["block_email", "common@example.com"]]
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "common@example.com"], ["block_email", "john@example.com"]]
+  FriendUser Exists (0.1ms)  SELECT  1 AS one FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ? LIMIT 1  [["email", "john@example.com"], ["friend_email", "common@example.com"]]
+  FriendUser Exists (0.1ms)  SELECT  1 AS one FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ? LIMIT 1  [["email", "common@example.com"], ["friend_email", "john@example.com"]]
+   (0.0ms)  begin transaction
+  SQL (0.2ms)  INSERT INTO "friend_users" ("email", "friend_email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "john@example.com"], ["friend_email", "common@example.com"], ["created_at", "2018-03-18 06:47:44.613538"], ["updated_at", "2018-03-18 06:47:44.613538"]]
+   (1.2ms)  commit transaction
+   (0.0ms)  begin transaction
+   (0.0ms)  commit transaction
+[FriendUserController]create_friend == create a friend connection between two email addresses ,params ==["john@example.com", "common@example.com"]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/friend_user/find_friend" for 127.0.0.1 at 2018-03-18 15:48:10 +0900
+Processing by FriendUserController#find_friend as */*
+  Parameters: {"email"=>"andy@example.com", "friend_user"=>{"email"=>"andy@example.com"}}
+  FriendUser Load (0.2ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (email = 'andy@example.com' )
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (friend_email = 'andy@example.com' )
+  BlockUser Load (0.1ms)  SELECT "block_users".* FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ?  [["email", "andy@example.com"]]
+[FriendUserController]find_friend == friends list =======>["john@example.com", "common@example.com"]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/friend_user/find_common_friend" for 127.0.0.1 at 2018-03-18 15:48:21 +0900
+Processing by FriendUserController#find_common_friend as */*
+  Parameters: {"friends"=>["andy@example.com", "john@example.com"], "friend_user"=>{}}
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (email = 'andy@example.com' )
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (friend_email = 'andy@example.com' )
+  BlockUser Load (0.1ms)  SELECT "block_users".* FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ?  [["email", "andy@example.com"]]
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (email = 'john@example.com' )
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (friend_email = 'john@example.com' )
+  BlockUser Load (0.1ms)  SELECT "block_users".* FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ?  [["email", "john@example.com"]]
+[FriendUserController]find_common_friend == common friends ==["common@example.com"]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/friend_user/subscribe_updates" for 127.0.0.1 at 2018-03-18 15:48:32 +0900
+Processing by FriendUserController#subscribe_updates as */*
+  Parameters: {"requestor"=>"lisa@example.com", "target"=>"john@example.com", "friend_user"=>{}}
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "lisa@example.com"], ["block_email", "john@example.com"]]
+  SubscribeUser Exists (0.1ms)  SELECT  1 AS one FROM "subscribe_users" WHERE "subscribe_users"."delete_at" IS NULL AND "subscribe_users"."email" = ? AND "subscribe_users"."subscribe_email" = ? LIMIT 1  [["email", "lisa@example.com"], ["subscribe_email", "john@example.com"]]
+   (0.1ms)  begin transaction
+  SQL (0.3ms)  INSERT INTO "subscribe_users" ("email", "subscribe_email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "lisa@example.com"], ["subscribe_email", "john@example.com"], ["created_at", "2018-03-18 06:48:32.471241"], ["updated_at", "2018-03-18 06:48:32.471241"]]
+   (1.1ms)  commit transaction
+   (0.1ms)  begin transaction
+   (0.0ms)  commit transaction
+[FriendUserController]subscribe_updates == subscribe to updates success ,params =={"requestor"=>"lisa@example.com", "target"=>"john@example.com", "controller"=>"friend_user", "action"=>"subscribe_updates", "friend_user"=>{}}
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/friend_user/block_updates" for 127.0.0.1 at 2018-03-18 15:48:40 +0900
+Processing by FriendUserController#block_updates as */*
+  Parameters: {"requestor"=>"andy@example.com", "target"=>"john@example.com", "friend_user"=>{}}
+  BlockUser Exists (0.1ms)  SELECT  1 AS one FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ? AND "block_users"."block_email" = ? LIMIT 1  [["email", "andy@example.com"], ["block_email", "john@example.com"]]
+   (0.0ms)  begin transaction
+  SQL (0.3ms)  INSERT INTO "block_users" ("email", "block_email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "andy@example.com"], ["block_email", "john@example.com"], ["created_at", "2018-03-18 06:48:40.469549"], ["updated_at", "2018-03-18 06:48:40.469549"]]
+   (1.3ms)  commit transaction
+   (0.1ms)  begin transaction
+   (0.0ms)  commit transaction
+  FriendUser Load (0.2ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."email" = ? AND "friend_users"."friend_email" = ?  [["email", "andy@example.com"], ["friend_email", "john@example.com"]]
+   (0.0ms)  begin transaction
+  SQL (0.2ms)  UPDATE "friend_users" SET delete_at = '2018-03-18 06:48:40.474016' WHERE "friend_users"."delete_at" IS NULL AND "friend_users"."id" = ?  [["id", 1]]
+   (3.9ms)  commit transaction
+  SubscribeUser Load (0.2ms)  SELECT "subscribe_users".* FROM "subscribe_users" WHERE "subscribe_users"."delete_at" IS NULL AND "subscribe_users"."email" = ? AND "subscribe_users"."subscribe_email" = ?  [["email", "andy@example.com"], ["subscribe_email", "john@example.com"]]
+[FriendUserController]block_updates == block updates success,params =={"requestor"=>"andy@example.com", "target"=>"john@example.com", "controller"=>"friend_user", "action"=>"block_updates", "friend_user"=>{}}
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/friend_user/retrieve_all_email" for 127.0.0.1 at 2018-03-18 15:48:49 +0900
+Processing by FriendUserController#retrieve_all_email as */*
+  Parameters: {"sender"=>"john@example.com", "text"=>"Hello World! kate@example.com", "friend_user"=>{}}
+  BlockUser Load (0.1ms)  SELECT "block_users".* FROM "block_users" WHERE "block_users"."delete_at" IS NULL AND "block_users"."email" = ?  [["email", "john@example.com"]]
+[FriendUserController]retrieve_all_email == block_mails ==[]
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (email = 'john@example.com' )
+  FriendUser Load (0.1ms)  SELECT "friend_users".* FROM "friend_users" WHERE "friend_users"."delete_at" IS NULL AND (friend_email = 'john@example.com' )
+[FriendUserController]retrieve_all_email == friend_emails ==["common@example.com"]
+  SubscribeUser Load (0.1ms)  SELECT "subscribe_users".* FROM "subscribe_users" WHERE "subscribe_users"."delete_at" IS NULL AND "subscribe_users"."subscribe_email" = ?  [["subscribe_email", "john@example.com"]]
+[FriendUserController]retrieve_all_email == subscribe_mails ==["lisa@example.com"]
+[FriendUserController]retrieve_all_email == retrieve_mails ==["common@example.com", "lisa@example.com"]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
