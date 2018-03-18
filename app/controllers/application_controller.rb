@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 	    begin
 	    	yield
 	    rescue Exception => e
-	    	logger.info("[ApplicationController] around_controller == system error======>#{e.backtrace}")
+	    	logger.info("[ApplicationController] around_controller == system error======>#{e}")
 	    	return render :json => {:success => false}
 	    end
 	end
