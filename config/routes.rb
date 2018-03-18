@@ -53,4 +53,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  match 'friend_user/create_friend',    via: [:get, :post]
+  match 'friend_user/find_friend',    via: [:get, :post]
+  match 'friend_user/find_common_friend',    via: [:get, :post]
+  match 'friend_user/subscribe_updates',    via: [:get, :post]
+  match 'friend_user/block_updates',    via: [:get, :post]
+  match 'friend_user/retrieve_all_email',    via: [:get, :post]
 end
